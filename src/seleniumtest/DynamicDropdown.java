@@ -19,9 +19,7 @@ public class DynamicDropdown {
 		Thread.sleep(1000);
 		driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//a[@value='BLR'])[2]")).click();
-	    //driver.findElement(By.id("btnclosepaxoption")).click();
-	    //System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='BLR']")).click();
 	}
 
 }
