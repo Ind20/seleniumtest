@@ -17,16 +17,12 @@ public class UpdateDropdown {
 		Thread.sleep(1000);
 		
 		int i = 0;
-		/* while(i<5);
+		
+		while(i<4)
 		{
 			driver.findElement(By.id("hrefIncAdt")).click();
 			Thread.sleep(1000);
 			i++;
-		} */
-		
-		for(i = 0; i<4; i++)
-		{
-			driver.findElement(By.id("hrefIncAdt")).click();
 		}
 	    
 	    driver.findElement(By.id("btnclosepaxoption")).click();
