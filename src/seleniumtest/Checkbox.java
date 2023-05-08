@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Checkbox {
 	
@@ -16,6 +17,8 @@ public class Checkbox {
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		Thread.sleep(1000);
+		Assert.assertFalse(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
+		Assert.assertFalse(false);
 		driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).click();
 	}
 }
