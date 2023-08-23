@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <listeners>
+        <listener class-name="org.testng.Listeners"/>
+    </listeners>
+    <test thread-count="5" name="Module1">
+        <parameter name="url" value="google.com"/>
+        <groups>
+            <run>
+                <exclude name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.testng.day1">
+                <methods>
+                    <exclude name="test1"/>
+                </methods>
+            </class>
+            <class name="org.testng.day2"/>
+        </classes>
+    </test>
+    <test thread-count="5" name="Module2">
+        <classes>
+            <class name="org.testng.day3">
+                <methods>
+                    <exclude name="API"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
