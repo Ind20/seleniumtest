@@ -1,9 +1,14 @@
 package org.practice;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 public class Sdet {
 
@@ -66,9 +71,13 @@ public class Sdet {
         driver.findElement(By.id("ConfirmPassword")).sendKeys("12345678");
         driver.findElement(By.id("register-button")).click();
 
-        */
 
-
+        // jquery dropdown
+        driver.navigate().to("https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/");
+        driver.findElement(By.id("justAnInputBox")).click();
+        Thread.sleep(1000);
+        selectValues(driver, "choice 1", "choice 2 3", "choice 6");
+*/
         Thread.sleep(2000);
         System.out.println("All test completed!");
         driver.close();
@@ -89,6 +98,32 @@ public class Sdet {
             }
         } catch (Exception e) {
             System.out.println(url + " - " + "is a broken link");
+        }
+    }
+
+    public static void selectValues(WebDriver driver, String... value) {
+        List<WebElement> choiceList = driver.findElements(By.xpath("//span[@class='comboTreeItemTitle']"));
+        if (!value[0].equalsIgnoreCase("all"))
+        {
+            for (WebElement item : choiceList)
+            {
+                String text = item.getText();
+                for (String val : value)
+                {
+                    if (text.equals(val))
+                    {
+                        item.click();
+                        System.out.println(text+ " selected");
+                        break;
+                    }
+                }
+            }
+        } else
+        {
+            for (WebElement item: choiceList)
+            {
+                item.click();
+            }
         }
     }
 }

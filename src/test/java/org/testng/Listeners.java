@@ -1,10 +1,6 @@
 package org.testng;
 
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-public class Listeners implements ITestListener
-{
+public class Listeners implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         System.out.println("executed on test start");
@@ -19,7 +15,7 @@ public class Listeners implements ITestListener
     @Override
     public void onTestFailure(ITestResult result) {
 
-        System.out.println("executed on Failure of test cases" +result.getName());
+        System.out.println("executed on Failure of test cases" + result.getName());
     }
 
     @Override
